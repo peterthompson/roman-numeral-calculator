@@ -1,0 +1,19 @@
+{
+  "name": "roman-numeral-calculator",
+  "version": "1.0.0",
+  "description": "Roman Numeral Calculator",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Pete Thompson",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "7.3.1",
+    "eslint": "5.14.1",
+    "eslint-config-prettier": "4.0.0",
+    "eslint-plugin-prettier": "3.0.1",
+    "jest": "24.1.0",
+    "prettier": "1.16.4"
+  }
+}

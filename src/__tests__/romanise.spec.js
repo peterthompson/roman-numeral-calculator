@@ -20,7 +20,6 @@ describe("romanise", () => {
       { number: 13, numeral: "XIII" },
       { number: 40, numeral: "XL" },
       { number: 42, numeral: "XLII" },
-      { number: 40, numeral: "XL" },
       { number: 50, numeral: "L" },
       { number: 90, numeral: "XC" },
       { number: 99, numeral: "XCIX" },

@@ -8,3 +8,9 @@ Start by writing a Roman Numeral converter and from that Roman Numerals. Then wr
 - Multiplication: *
 - Addition: +
 - Subtraction: -
+
+# Assumptions
+
+- Cannot represent values greater than or equal to 4000 in Roman Numerals using only characters I, V, X, L, C and M.
+- Cannot represent decimal values in Roman Numerals.
+- Cannot represent zero in Roman Numerals.

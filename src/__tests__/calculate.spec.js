@@ -13,4 +13,17 @@ describe("calculate", () => {
       expect(calculate(string)).toEqual(result)
     );
   });
+
+  it("should perform subtraction", () => {
+    const scenarios = [
+      { string: "XXIV - XI", result: "XIII" },
+      { string: "MM - MCMXCIX", result: "I" },
+      { string: "DC - LX - VI", result: "DXXXIV" },
+      { string: "I - II - III", result: "-IV" }
+    ];
+
+    scenarios.forEach(({ string, result }) =>
+      expect(calculate(string)).toEqual(result)
+    );
+  });
 });

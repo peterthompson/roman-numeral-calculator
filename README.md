@@ -9,8 +9,20 @@ Start by writing a Roman Numeral converter and from that Roman Numerals. Then wr
 - Addition: +
 - Subtraction: -
 
-# Assumptions
+## Assumptions
 
 - Cannot represent values greater than or equal to 4000 in Roman Numerals using only characters I, V, X, L, C and M.
-- Cannot represent decimal values in Roman Numerals.
+- Cannot represent fractions in Roman Numerals.
 - Cannot represent zero in Roman Numerals.
+
+## Scripts
+
+### Install dependencies
+```
+npm install
+```
+
+### Run tests
+```
+npm test
+```

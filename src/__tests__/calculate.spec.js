@@ -1,4 +1,4 @@
-import calculate from "../calculate";
+import calculate, { OutputError, InputError } from "../calculate";
 
 describe("calculate", () => {
   it("should perform addition", () => {
@@ -72,5 +72,19 @@ describe("calculate", () => {
     scenarios.forEach(({ string, result }) =>
       expect(calculate(string)).toEqual(result)
     );
+  });
+
+  it("throws OutputError when output is not a valid Roman Numeral", () => {
+    expect(() => calculate("I - I")).toThrow(OutputError);
+    expect(() => calculate("MMMCMXCIX + I")).toThrow(OutputError);
+    expect(() => calculate("-MMMCMXCIX - II")).toThrow(OutputError);
+    expect(() => calculate("I / II")).toThrow(OutputError);
+  });
+
+  it("throws InputError when input is not valid", () => {
+    expect(() => calculate("(I + II(")).toThrow(InputError);
+    expect(() => calculate("I + / + II")).toThrow(InputError);
+    expect(() => calculate()).toThrow(InputError);
+    expect(() => calculate(1 + 1)).toThrow(InputError);
   });
 });

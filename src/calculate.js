@@ -1,6 +1,9 @@
 import romanise from "./romanise";
 import deromanise from "./deromanise";
 
+export class InputError extends Error {}
+export class OutputError extends Error {}
+
 const pattern = {
   numerals: "(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})",
   symbols: "[+-/*^()]"
@@ -16,13 +19,16 @@ function isOrder(string) {
 }
 
 function calculate(string) {
+  if (!string || typeof string !== "string") {
+    throw new InputError();
+  }
+
   const regex = new RegExp(`${pattern.numerals}|${pattern.symbols}`, "g");
 
   const parts = string
     .match(regex)
     .map(part => (isNumeral(part) ? deromanise(part) : part));
 
-  // TODO: more validation of sanitised
   const sanitised = [];
 
   while (parts.length) {
@@ -37,10 +43,25 @@ function calculate(string) {
     }
   }
 
-  // TODO: some validation of arabic
-  const arabic = new Function(`return ${sanitised.join(" ")}`)();
+  let arabic;
 
-  return romanise(arabic);
+  try {
+    arabic = new Function(`return ${sanitised.join(" ")}`)();
+  } catch (err) {
+    throw new InputError();
+  }
+
+  if (!Number.isInteger(arabic)) {
+    throw new OutputError();
+  }
+
+  const result = romanise(arabic);
+
+  if (typeof result === "undefined") {
+    throw new OutputError();
+  }
+
+  return result;
 }
 
 export default calculate;

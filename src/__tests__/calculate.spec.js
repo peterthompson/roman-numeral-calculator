@@ -61,4 +61,16 @@ describe("calculate", () => {
       expect(calculate(string)).toEqual(result)
     );
   });
+
+  it("should support use of brackets", () => {
+    const scenarios = [
+      { string: "II * III + IV", result: "X" },
+      { string: "II * (III + IV)", result: "XIV" },
+      { string: "II * ((III + II) * IV)", result: "XL" }
+    ];
+
+    scenarios.forEach(({ string, result }) =>
+      expect(calculate(string)).toEqual(result)
+    );
+  });
 });

@@ -50,4 +50,15 @@ describe("calculate", () => {
       expect(calculate(string)).toEqual(result)
     );
   });
+
+  it("should perform order", () => {
+    const scenarios = [
+      { string: "X ^ II", result: "C" },
+      { string: "XV ^ III", result: "MMMCCCLXXV" }
+    ];
+
+    scenarios.forEach(({ string, result }) =>
+      expect(calculate(string)).toEqual(result)
+    );
+  });
 });

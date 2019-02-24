@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Roman Numeral Calculator",
   "scripts": {
+    "start": "babel-node ./src",
     "test": "jest"
   },
   "keywords": [],
@@ -15,5 +16,9 @@
     "eslint-plugin-prettier": "3.0.1",
     "jest": "24.1.0",
     "prettier": "1.16.4"
+  },
+  "dependencies": {
+    "@babel/node": "7.2.2",
+    "prompt": "1.0.0"
   }
 }

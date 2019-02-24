@@ -38,4 +38,16 @@ describe("calculate", () => {
       expect(calculate(string)).toEqual(result)
     );
   });
+
+  it("should perform multiplication", () => {
+    const scenarios = [
+      { string: "X * II", result: "XX" },
+      { string: "M * III", result: "MMM" },
+      { string: "CXI * III * II", result: "DCLXVI" }
+    ];
+
+    scenarios.forEach(({ string, result }) =>
+      expect(calculate(string)).toEqual(result)
+    );
+  });
 });

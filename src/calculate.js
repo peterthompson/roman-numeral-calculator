@@ -3,7 +3,7 @@ import deromanise from "./deromanise";
 
 const pattern = {
   numerals: "(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})",
-  symbols: "[+-]"
+  symbols: "[+-/]"
 };
 
 function isNumeral(string) {

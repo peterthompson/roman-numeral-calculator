@@ -26,4 +26,16 @@ describe("calculate", () => {
       expect(calculate(string)).toEqual(result)
     );
   });
+
+  it("should perform division", () => {
+    const scenarios = [
+      { string: "X / II", result: "V" },
+      { string: "MMM / M", result: "III" },
+      { string: "DCLXVI / III / II", result: "CXI" }
+    ];
+
+    scenarios.forEach(({ string, result }) =>
+      expect(calculate(string)).toEqual(result)
+    );
+  });
 });
